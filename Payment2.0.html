@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Payment Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    header {
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+    
+    h1 {
+      margin: 0;
+      color: #333;
+    }
+    
+    main {
+      padding: 20px;
+    }
+    
+    section {
+      margin-bottom: 20px;
+    }
+    
+    h2 {
+      margin: 0 0 10px;
+    }
+    
+    form {
+      display: grid; /* Use CSS grid layout for the form elements, more flexible and  */
+      grid-gap: 10px;
+      max-width: 300px;
+    }
+    
+    label {
+      font-weight: bold; /* Make the labels bold */
+    }
+    
+    input[type="text"] {
+      padding: 5px;
+    }
+    
+    button {
+      padding: 10px 20px;
+      background-color: black;
+      color: #fff;
+      border: none;
+      cursor: pointer; /* Add a pointer cursor on hover */
+    }
+    
+    footer {
+      background-color: #f2f2f2;
+      padding: 10px;
+      text-align: center;
+    }
+  
+    
+  </style>
+ 
+</head>
+<body>
+  <!-- Header section -->
+  <header>
+    <h1>Payment Page</h1>
+  </header>
+
+  <main>
+    <!-- Order Summary Section -->
+    <section>
+      <h2>Order Summary</h2>
+      <p>Product Name: XYZ</p>
+      <p>Price: $99.99</p>
+    </section>
+
+    <section>
+      <h2>Payment Details</h2>
+      <form id="paymentForm" action="process_payment.php" method="POST"> <!-- Payment form with ID and action attribute -->
+        <label for="paymentMethod">Payment Method:</label> <!-- Payment method selection label -->
+        
+        <div>
+           <!-- Credit Card radio button - radio type
+            allow users to choose one option from a group of options -->
+          <input type="radio" id="creditCard" name="paymentMethod" value="creditCard" onchange="handlePaymentMethodChange()" required>
+          
+          <label for="creditCard">Credit Card</label>
+        </div>
+
+        <!-- Debit Card radio button -->
+        <div>
+          <input type="radio" id="debitCard" name="paymentMethod" value="debitCard" onchange="handlePaymentMethodChange()" required>
+          <label for="debitCard">Debit Card</label>
+        </div>
+        <br>
+        
+        <!-- Card Number input label -->
+        <label for="cardNumber">Card Number:</label>
+        <input type="text" id="cardNumber" name="cardNumber" required>
+        <br>
+
+        <!-- Expiry date input label -->
+        <label for="expiryDate">Expiry Date:</label>
+        <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" required>
+        <br>
+
+        <!-- CVV input button -->
+        <label for="cvv">CVV:</label>
+        <input type="text" id="cvv" name="cvv" required>
+        <br>
+
+        <!-- Go to checkout-->
+        <button onclick="window.location.href='PS_CheckOut.html'">Check Out</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer section -->
+  <footer>
+    <p>&copy;Skyline travel. All rights reserved. Contact us at info@skylinetravel.com for any inquiries. . All rights reserved.</p>
+  </footer>
+  
+</body>
+</html>

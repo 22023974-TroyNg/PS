@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Airline Ticket Purchase</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #3c5e9a;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    #username,
+    #membership-number,
+    #email,
+    #phone,
+    #account-username,
+    #password {
+      font-weight: bold;
+    }
+
+    #fly-together {
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to Airline Ticket Purchase</h1>
+  </header>
+
+  <main>
+    <section id="personal-details">
+      <h2>Personal Details</h2>
+      <p>Username: <input type="text" id="username-input"></p>
+      <p>Membership Number: <input type="text" id="membership-input"></p>
+    </section>
+
+    <section id="contacts">
+      <h2>Contacts</h2>
+      <p>Email: <input type="email" id="email-input"></p>
+      <p>Phone: <input type="tel" id="phone-input"></p>
+    </section>
+
+    <section id="account-details">
+      <h2>Account Details</h2>
+      <p>Username: <input type="text" id="account-username-input"></p>
+      <p>Password: <input type="password" id="password-input"></p>
+    </section>
+
+
+    <section id="fly-together">
+      <h2>Common Fly Together</h2>
+      <button onclick="window.location.href='FlightDetails.html'">FlightDetails</button>
+    </section>
+  </main>
+
+  <script>
+    window.onload = function() {
+      // Function to update the content with user inputs
+      function updateContent(elementId, userInput) {
+        const element = document.getElementById(elementId);
+        element.textContent = userInput;
+      }
+
+      // Function to handle user input changes
+      function handleInput(inputId, elementId) {
+        const userInput = document.getElementById(inputId).value;
+        updateContent(elementId, userInput);
+      }
+
+    };
+  </script>
+  
+</body>
+</html>
+
+
